@@ -17,7 +17,9 @@ function letterCounter(sentence) {
 
 
     return wordObj
-}
+}dfc
 
 
 phrase = "  dont ever forget that you worked very hard to learn this stuff"
+
+console.log(letterCounter(phrase))

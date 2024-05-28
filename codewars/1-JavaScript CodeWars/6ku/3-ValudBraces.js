@@ -29,12 +29,16 @@ function validBraces(braces){
         if(braces[midPoint -1] === curly[0] && braces[midPoint] === curly[1]) return true
         if(braces[midPoint -1] === bracket[0] && braces[midPoint] === bracket[1]) return true
         if(braces[midPoint -1] === paren[0] && braces[midPoint] === paren[1]) return true
+        if(braces[midPoint -1] === curly[0] && braces[braces.length -1] === curly[1]) return true
+        if(braces[midPoint -1] === bracket[0] && braces[braces.length -1] === bracket[1]) return true
+
+
 
     } return false;
 }
 
 console.log(validBraces("({})[({})]")) //  True
-console.log(validBraces("()))")) //  False
+
 console.log(validBraces("()))")) //  False
 console.log(validBraces("(){}[]"))   //  True
 console.log(validBraces("([{}])"))   //  True

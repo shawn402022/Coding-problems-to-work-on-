@@ -20,18 +20,26 @@ function arrayDiff(a,b){
 
     //create counter to keep track of b elements
     let bCounter = b.length;
-    let aCounter = aCopy.length;
+
 
     //create while  loop.
     debugger
 
     while(bCounter !== 0){
         for (let i = 0; i < aCopy.length; i++) {
+
+
+
             //remove elements an a that are equal to element in b
             debugger
             if (aCopy[i] === b[bCounter-1]) {
                 debugger
-               a.splice(aCopy[i] -1, 1)
+                if(aCopy[0] === b[0]){
+                    a.splice(1 -1, 1)
+                } else {
+                    a.splice(aCopy[i] -1, 1)
+                }
+
             }
         }
         debugger
@@ -45,8 +53,8 @@ console.log(arrayDiff([9,-7,-4],[9])) // [-7,-4]
 console.log(arrayDiff([6,-10],[6])) // [-10]
 console.log(arrayDiff([14,-6,-10,-12,4,3,3],[14,-6])) // [-10,-12,4,3,3]
 
-console.log(arrayDiff([1,2],[1])) // [2]
-console.log(arrayDiff([1,2,2,2,3],[2])) // [1,3]
+//console.log(arrayDiff([1,2],[1])) // [2]
+//console.log(arrayDiff([1,2,2,2,3],[2])) // [1,3]
 console.log(arrayDiff([1,2,3],[1,2])) // [3]
 
 

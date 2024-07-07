@@ -15,21 +15,61 @@ arrayDiff([1,2,2,2,3],[2]) == [1,3]
 
 
 function arrayDiff(a,b){
+    debugger
+    // create while loop
+
+    // while pointer b is less than b.length
+    let unsolved = true
+    let removeB
+    let removeA
+    while(unsolved) {
+        debugger
+        unsolved = false;
+
+        for (let i = 0; i < a.length; i++) {
+            const numA = a[i];
+debugger
+            if(b[0] === numA){
+                removeA = a.splice(i,1)
+            }
+        }
+        removeB = b.shift()
+
+        debugger
+        if(!b.length){
+            unsolved = false;
+        } else {
+            unsolved = true
+        }
+    }
+    return a
+}
+console.log(arrayDiff([15,11,-16,6,11,-5,-5,-16,8,15,-19],[15,11,-16,6])) //[-5, -5, 8, -19]
+console.log(arrayDiff([18,15,18,16,5,-1,18,-3],[18,15,18,16,5])) // [-1,-3]
+console.log(arrayDiff([9,-7,-4],[9])) // [-7,-4]
+console.log(arrayDiff([6,-10],[6])) // [-10]
+console.log(arrayDiff([14,-6,-10,-12,4,3,3],[14,-6])) // [-10,-12,4,3,3]
+
+//console.log(arrayDiff([1,2],[1])) // [2]
+console.log(arrayDiff([1,2,2,2,3],[2])) // [1,3]
+console.log(arrayDiff([1,2,2],[2])) // [1]
+console.log(arrayDiff([1,2,3],[1,2])) // [3]
+
+
+
+
+
+
+/**
+ * first solution
+ * function arrayDiff(a,b){
     //create copy of the a array so that the length does not change while looping
     let aCopy = a.slice()
-
     //create counter to keep track of b elements
     let bCounter = b.length;
-
-
     //create while  loop.
-    debugger
-
     while(bCounter !== 0){
         for (let i = 0; i < aCopy.length; i++) {
-
-
-
             //remove elements an a that are equal to element in b
             debugger
             if (aCopy[i] === b[bCounter-1]) {
@@ -39,7 +79,6 @@ function arrayDiff(a,b){
                 } else {
                     a.splice(aCopy[i] -1, 1)
                 }
-
             }
         }
         debugger
@@ -48,21 +87,5 @@ function arrayDiff(a,b){
     // return a
     return a
 }
-
-console.log(arrayDiff([9,-7,-4],[9])) // [-7,-4]
-console.log(arrayDiff([6,-10],[6])) // [-10]
-console.log(arrayDiff([14,-6,-10,-12,4,3,3],[14,-6])) // [-10,-12,4,3,3]
-
-//console.log(arrayDiff([1,2],[1])) // [2]
-//console.log(arrayDiff([1,2,2,2,3],[2])) // [1,3]
-console.log(arrayDiff([1,2,3],[1,2])) // [3]
-
-
-
-
-
-/**
- * first solution
- *
  *
  */
